@@ -25,7 +25,7 @@ public class EasyJavaCoffee
         int i = 0;
         int quantity1 = 0, quantity2 = 0, quantity3 = 0, quantity4 = 0, quantity5 =0;
         //Initization first before the rest of the code has been encoded.
-
+        
         do{
             System.out.println("***************EASY JAVA COFFEE SHOP************************");
             System.out.println("                 Mandaluyong City");
@@ -70,10 +70,11 @@ public class EasyJavaCoffee
             System.out.println("                  PURCHASE ORDER");
 
             do
-            {
+            {   
+               
                 pcode = JOptionPane.showInputDialog("Enter Product Code: ");
                 if(pcode.equals(pcode1)){
-                    System.out.print("\nSelect Product Code:		");
+                    System.out.print("Enter Product Code:		");
                     System.out.println(pcode);
                     System.out.print("Enter Quantity:			");
                     quantity1 = Integer.parseInt
@@ -83,7 +84,7 @@ public class EasyJavaCoffee
                     System.out.println("Amount: " + amount1);
 
                 }else if (pcode.equals(pcode2)){
-                    System.out.print("\nSelect Product Code:		");
+                    System.out.print("Enter Product Code:		");
                     System.out.println(pcode);
                     System.out.print("Enter Quantity:			");
                     quantity2 = Integer.parseInt
@@ -93,7 +94,7 @@ public class EasyJavaCoffee
                     System.out.println("Amount: " + amount2);
 
                 }else if (pcode.equals(pcode3)){
-                    System.out.print("\nSelect Product Code:		");
+                    System.out.print("\nEnter Product Code:		");
                     System.out.println(pcode);
                     System.out.print("Enter Quantity:			");
                     quantity3 = Integer.parseInt
@@ -103,7 +104,7 @@ public class EasyJavaCoffee
                     System.out.println("Amount: " + amount3);
 
                 }else if (pcode.equals(pcode4)){
-                    System.out.print("\nSelect Product Code:		");
+                    System.out.print("\nEnter Product Code:		");
                     System.out.println(pcode);
                     System.out.print("Enter Quantity:			");
                     quantity4 = Integer.parseInt
@@ -113,7 +114,7 @@ public class EasyJavaCoffee
                     System.out.println("Amount: " + amount4);
 
                 }else if (pcode.equals(pcode5)){
-                    System.out.print("\nSelect Product Code:		");
+                    System.out.print("\nEnter Product Code:		");
                     System.out.println(pcode);
                     System.out.print("Enter Quantity:			");
                     quantity5 = Integer.parseInt
@@ -121,8 +122,9 @@ public class EasyJavaCoffee
                     System.out.println(quantity5);
                     amount5 = quantity5 * unitprice5;
                     System.out.println("Amount: " + amount5);
-
-                }else{
+                    
+                }
+                else{
                     if(!pcode.equals(pcode1)){
                         JOptionPane.showMessageDialog(null, "Code not in the list, Please try again", "ERROR", JOptionPane.ERROR_MESSAGE);
                         continue;
@@ -130,53 +132,64 @@ public class EasyJavaCoffee
                 }
             
                 System.out.println("Add an Item? (Y/N)");
-                if (quantity1 > 0 && quantity2 > 0 && quantity3 > 0 && quantity4 > 0 && quantity5 > 0){
-                    System.out.println("OUT OF ORDER" + "\nRedirecting to Order Information...");
+                if (quantity1 > 0 && quantity2 > 0 && quantity3 > 0 && quantity4 > 0 && quantity5 > 0)
+                {
+                    System.out.println("\nOUT OF ORDER");
                 }
 
-                while(i < 6){
+                while (i < 6){
                     prompt = JOptionPane.showInputDialog("Add an Item? (Y/N)");
 
-                    if(prompt.equalsIgnoreCase("Y")){
+                    if(prompt.equalsIgnoreCase("Y"))
+                    {
                         System.out.println(prompt+ "\n");
                         break;
-
-                    }else if(prompt.equalsIgnoreCase("N")){
+                    }
+                    else if(prompt.equalsIgnoreCase("N"))
+                    {
                         System.out.println(prompt + "\n");
                         break;
 
-                    }else if(!prompt.equalsIgnoreCase("Y") && !prompt.equalsIgnoreCase("N")){
-                        JOptionPane.showMessageDialog(null, "Invalid Key, Please Try Again", "ERROR", JOptionPane.ERROR_MESSAGE);
                     }
+                    else if(!prompt.equalsIgnoreCase("Y") && !prompt.equalsIgnoreCase("N")){
+                        JOptionPane.showMessageDialog(null, "Invalid Key, Please Try Again", "ERROR", JOptionPane.ERROR_MESSAGE);
+                        continue;
+                    }
+                    
+                    
                 }
-
-            }while(prompt.equalsIgnoreCase("Y"));   
+                    
+                }while(prompt.equalsIgnoreCase("Y"));   
             
             System.out.println("***************EASY JAVA COFFEE SHOP************************");
             System.out.println("                 Mandaluyong City");
-            System.out.println("                    ORDER INFORMATION \n");
+            System.out.println("                 ORDER INFORMATION \n");
 
-            System.out.println("Code  " + " Description  " + " Unit Price  " + " Quantity  " + "A mount  ");
-            if(quantity1>0){
-                System.out.println(pcode1+"  "+ Description1 +"P "+unitprice1+" "+quantity1+"P "+amount1);
+            System.out.println("Code	 Description				               Unit Price			     Quantity			     Amount");
+		if(quantity1>0){
+			System.out.println(pcode1+"	 "+Description1+"		P "+unitprice1+"				"+quantity1+"			    P "+amount1);
+		}
+		
+			if(quantity2>0){
+			System.out.println(pcode2+"	 "+Description2+"		                P "+unitprice2+"			        "+quantity2+"			    P "+amount2);
+		}
+		
+			if(quantity3>0){
+			System.out.println(pcode3+"	 "+Description3+"	        P "+unitprice3+"			        "+quantity3+"			    P "+amount3);
+		}
+		
+			if(quantity4>0){
+			System.out.println(pcode4+"	 "+Description4+"	                P "+unitprice4+"			        "+quantity4+"			    P "+amount4);
+		}
+		
+			if(quantity5>0){
+			System.out.println(pcode5+"	 "+Description5+"                                  P "+unitprice5+"                              "+quantity5+"			    AP "+amount5);
+		}
+            
 
-            }else if(quantity2>0){
-                System.out.println(pcode2+" "+ Description2 +"P "+unitprice2+" "+quantity2+"P "+amount2);
-
-            }else if(quantity3>0){
-                System.out.println(pcode3+" "+ Description3 +"P "+unitprice3+" "+quantity3+"P "+amount3);
-
-            }else if(quantity4>0){
-                System.out.println(pcode4+" "+ Description4 +"P "+ unitprice4 +""+ quantity4 +"P "+amount4);
-
-            }else if(quantity5>0){
-                System.out.println(pcode5+" "+ Description5 +"P "+ unitprice5 +" "+ quantity5 +"P "+amount5);
-
-            }
-
-            System.out.println("\n****************nothing follows*****************");
+            System.out.println("\n****************Nothing Follows*******************");
             amount = amount1 + amount2 + amount3 + amount4 + amount5;
-            System.out.println("\n			GRAND TOTAL: P "+ amount+"\n");
+            System.out.println("\n	GRAND TOTAL: P "+ amount+"\n");
             System.out.println("**************************************************");
             
             while(i < 6){
@@ -195,6 +208,7 @@ public class EasyJavaCoffee
                     }else{
                         if(!prompt.equalsIgnoreCase("Y") && !prompt.equalsIgnoreCase("N")){
                             JOptionPane.showMessageDialog(null, "Invalid Key, Please Try Again", "ERROR", JOptionPane.ERROR_MESSAGE);
+                            continue;
                         }
                     }
                 }
