@@ -18,7 +18,7 @@ public class EasyJavaCoffee
         double unitprice4 = 468.99;
         double unitprice5 = 10270.98;
         int i = 0;
-        int quantity1 = 0, quantity2 = 0, quantity3 = 0, quantity4 = 0, quantity5 =0;
+        int quantity, quantity1 = 0, quantity2 = 0, quantity3 = 0, quantity4 = 0, quantity5 =0;
         //Initization first before the rest of the code has been encoded.
         
         do
@@ -37,28 +37,123 @@ public class EasyJavaCoffee
         System.out.println("Purchase Items? (Y/N): ");
         System.out.println("");
         }
-        while (i < 6){
-            prompt = JOptionPane.showInputDialog("Proceed to purchase items? (Y/N)");
-            if (prompt.equalsIgnoreCase("Y))
-                                    
-                                        }
-        System.out.println("***************EASY JAVA COFFEE SHOP************************");
-        System.out.println("                 Mandaluyong City");
-        System.out.println("\n              PURCHASE ORDER");
-    
-        System.out.println("\nSelect Product Code: ");
-            pcode = JOptionPane.showInputDialog("Enter Product Code:");
-        System.out.println(pcode);
+        while(i < 6);
+        {
+			prompt = JOptionPane.showInputDialog("Purchse Item? Y/N");
+			if(prompt.equalsIgnoreCase("Y")){
+				System.out.println(prompt+ "\n");
+				break;
+			}
+			else if(prompt.equalsIgnoreCase("N"))
+            {
+					System.out.println(prompt + "\n");
+					System.exit(0);
+			}
+			else if(!prompt.equalsIgnoreCase("Y") && !prompt.equalsIgnoreCase("N")){
+						JOptionPane.showMessageDialog(null, "Invalid Key, Please Try Again", "ERROR", JOptionPane.ERROR_MESSAGE);
+						}
+            
         
-        System.out.println("Enter Quantity: ");
-            quantity = Integer.parseInt(JOptionPane.showInputDialog("Enter Quantity:"));
-        System.out.println(quantity);
-        
-        System.out.println("Add item?(y/n)");
+    		
+			
+			i++;
+			if(i == 5){
+			JOptionPane.showMessageDialog(null, "Too many Invalid Attempts", "ERROR", JOptionPane.ERROR_MESSAGE);
+			System.out.println("\nSystem Terminated");
+			System.exit(0);
+            }
 
+        }
+    
+        
         System.out.println("***************EASY JAVA COFFEE SHOP************************");
         System.out.println("                 Mandaluyong City");
-        System.out.println("\n            ORDER INFORMATION");
+        System.out.println("                  PURCHASE ORDER");
+        do
+        {
+            pcode = JOptionPane.showInputDialog("Enter Product Code: ");
+            if(pcode.equals(pcode1))
+            {
+                System.out.print("\nSelect Product Code:		");
+				System.out.println(pcode);
+				System.out.print("Enter Quantity:			");
+				quantity1 = Integer.parseInt
+				(JOptionPane.showInputDialog("Enter Quantity: "));
+				System.out.println(quantity1);
+            }
+            else if (pcode.equals(pcode2))
+            {
+                System.out.print("\nSelect Product Code:		");
+				System.out.println(pcode);
+				System.out.print("Enter Quantity:			");
+				quantity2 = Integer.parseInt
+				(JOptionPane.showInputDialog("Enter Quantity: "));
+				System.out.println(quantity2);
+            }
+            else if (pcode.equals(pcode3))
+            {
+                System.out.print("\nSelect Product Code:		");
+				System.out.println(pcode);
+				System.out.print("Enter Quantity:			");
+				quantity3 = Integer.parseInt
+				(JOptionPane.showInputDialog("Enter Quantity: "));
+				System.out.println(quantity3);
+            }
+            else if (pcode.equals(pcode4))
+            {
+                System.out.print("\nSelect Product Code:		");
+				System.out.println(pcode);
+				System.out.print("Enter Quantity:			");
+				quantity4 = Integer.parseInt
+				(JOptionPane.showInputDialog("Enter Quantity: "));
+				System.out.println(quantity4);
+            }
+            else if (pcode.equals(pcode5))
+            {
+                System.out.print("\nSelect Product Code:		");
+				System.out.println(pcode);
+				System.out.print("Enter Quantity:			");
+				quantity5 = Integer.parseInt
+				(JOptionPane.showInputDialog("Enter Quantity: "));
+				System.out.println(quantity5);
+            }
+            else
+            {
+                if(!pcode.equals(pcode1))
+                {
+                    JOptionPane.showMessageDialog(null, "Code not in the list, Please try again", "ERROR", JOptionPane.ERROR_MESSAGE);
+				    continue;
+				}
+            }
         
+        System.out.println("Add an Item? (Y/N)");
+        while(i <= 5);
+        {
+            prompt = JOptionPane.showInputDialog("Add an Item? (Y/N)");
+            if(prompt.equalsIgnoreCase("Y")){
+				System.out.println(prompt+ "\n");
+				break;
+			}
+			else if(prompt.equalsIgnoreCase("N"))
+            {
+					System.out.println(prompt + "\n");
+					System.exit(0);
+			}
+			else if(!prompt.equalsIgnoreCase("Y") && !prompt.equalsIgnoreCase("N")){
+						JOptionPane.showMessageDialog(null, "Invalid Key, Please Try Again", "ERROR", JOptionPane.ERROR_MESSAGE);
+						}
+                    }    
+        }while(prompt.equalsIgnoreCase("Y"));
+    
+
 }
 }
+    
+
+		
+        
+        
+        
+
+       
+        
