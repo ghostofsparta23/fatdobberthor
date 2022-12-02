@@ -5,6 +5,16 @@ public class EasyJavaCoffee
 {
     public static void main(String[]args)
     {
+        String pcode1 = "A001";
+        String pcode2 = "A002";
+        String pcode3 = "A003";
+        String pcode4 = "A004";
+        String pcode5 = "A005";
+        String pcode;
+        String prompt = "";
+        
+        do
+        {
         System.out.println("***************EASY JAVA COFFEE SHOP************************");
         System.out.println("                 Mandaluyong City");
         System.out.println("\n               PRODUCT INFORMATION");
@@ -15,19 +25,22 @@ public class EasyJavaCoffee
         System.out.println("A004   " + "SanDisk (32GB) Cruzer Blade USB" + "                468.99");
         System.out.println("A005   " + "Seagate Barracuda 6TB" + "                       10,270.98");
         System.out.println("************************************************************");
+        System.out.println("Welcome to Easy Java Coffee Shop!");
         System.out.println("Purchase Items? (Y/N)");
         System.out.println("");
+        }
+        while
 
         System.out.println("***************EASY JAVA COFFEE SHOP************************");
         System.out.println("                 Mandaluyong City");
         System.out.println("\n              PURCHASE ORDER");
     
         System.out.println("\nSelect Product Code: ");
-        String code = JOptionPane.showInputDialog("Enter Product Code:");
-        System.out.println(code);
+            pcode = JOptionPane.showInputDialog("Enter Product Code:");
+        System.out.println(pcode);
         
         System.out.println("Enter Quantity: ");
-        int quantity = Integer.parseInt(JOptionPane.showInputDialog("Enter Quantity:"));
+            quantity = Integer.parseInt(JOptionPane.showInputDialog("Enter Quantity:"));
         System.out.println(quantity);
         
         System.out.println("Add item?(y/n)");
