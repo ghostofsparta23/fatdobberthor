@@ -22,13 +22,13 @@ public class EasyJavaCoffee
         double unitprice3 = 3234.77;
         double unitprice4 = 468.99;
         double unitprice5 = 10270.98;
-        double amount, amount1, amount2, amount3, amount4, amount5;
+        double amount, amount1 = 0, amount2 = 0, amount3 = 0, amount4 = 0, amount5 = 0;
         int i = 0;
-        int quantity, quantity1 = 0, quantity2 = 0, quantity3 = 0, quantity4 = 0, quantity5 =0;
+        int quantity1 = 0, quantity2 = 0, quantity3 = 0, quantity4 = 0, quantity5 =0;
         //Initization first before the rest of the code has been encoded.
-        
-        do
-        {
+
+        do{
+
         System.out.println("***************EASY JAVA COFFEE SHOP************************");
         System.out.println("                 Mandaluyong City");
         System.out.println("\n               PRODUCT INFORMATION");
@@ -41,27 +41,23 @@ public class EasyJavaCoffee
         System.out.println("************************************************************");
         System.out.println("Welcome to Easy Java Coffee Shop!");
         System.out.println("Purchase Items? (Y/N): ");
-        System.out.println("");
-        }
-        while(i < 6);
+        
+        while(i < 6)
         {
-			prompt = JOptionPane.showInputDialog("Purchse Item? Y/N");
+			prompt = JOptionPane.showInputDialog("Purchse Items? Y/N");
 			if(prompt.equalsIgnoreCase("Y")){
 				System.out.println(prompt+ "\n");
 				break;
 			}
 			else if(prompt.equalsIgnoreCase("N"))
             {
-					System.out.println(prompt + "\n");
+					System.out.println(prompt + "\nSystem Terminated");
 					System.exit(0);
+                    break;
 			}
 			else if(!prompt.equalsIgnoreCase("Y") && !prompt.equalsIgnoreCase("N")){
 						JOptionPane.showMessageDialog(null, "Invalid Key, Please Try Again", "ERROR", JOptionPane.ERROR_MESSAGE);
-						}
-            
-        
-    		
-			
+			}
 			i++;
 			if(i == 5){
 			JOptionPane.showMessageDialog(null, "Too many Invalid Attempts", "ERROR", JOptionPane.ERROR_MESSAGE);
@@ -71,7 +67,6 @@ public class EasyJavaCoffee
 
         }
     
-        
         System.out.println("***************EASY JAVA COFFEE SHOP************************");
         System.out.println("                 Mandaluyong City");
         System.out.println("                  PURCHASE ORDER");
@@ -143,9 +138,14 @@ public class EasyJavaCoffee
             }
         
         System.out.println("Add an Item? (Y/N)");
-        while(i <= 5);
+            if (quantity1>0 && quantity2>0 && quantity3>0 && quantity4>0 && quantity5>0)
+            {
+                System.out.println("OUT OF ORDER" + "\nRedirecting to Order Information...");
+            }
+        while(i < 6)
         {
             prompt = JOptionPane.showInputDialog("Add an Item? (Y/N)");
+
             if(prompt.equalsIgnoreCase("Y")){
 				System.out.println(prompt+ "\n");
 				break;
@@ -153,7 +153,7 @@ public class EasyJavaCoffee
 			else if(prompt.equalsIgnoreCase("N"))
             {
 					System.out.println(prompt + "\n");
-					System.exit(0);
+                    break;
 			}
 			else if(!prompt.equalsIgnoreCase("Y") && !prompt.equalsIgnoreCase("N")){
 						JOptionPane.showMessageDialog(null, "Invalid Key, Please Try Again", "ERROR", JOptionPane.ERROR_MESSAGE);
@@ -163,32 +163,32 @@ public class EasyJavaCoffee
         
         System.out.println("***************EASY JAVA COFFEE SHOP************************");
         System.out.println("                 Mandaluyong City");
-        System.out.prinln("                    ORDER INFORMATION \n");
+        System.out.println("                    ORDER INFORMATION \n");
 
-        System.out.println("Code  " + "Description  " + "Unit Price  " + "Quantity  " + "Amount  ");
+        System.out.println("Code  " + " Description  " + " Unit Price  " + " Quantity  " + "A mount  ");
         if(quantity1>0){
-			System.out.println(pcode1+"			"+ Description1 +"				P "+unitprice1+"				"+quantity1+"			    P "+amount1);
+			System.out.println(pcode1+"  "+ Description1 +"P "+unitprice1+" "+quantity1+"P "+amount1);
 		}
 		
 			else if(quantity2>0){
-			System.out.println(pcode2+"			"+ Description2 +"			 P "+unitprice2+"			    "+quantity2+"			     P "+amount2);
+			System.out.println(pcode2+" "+ Description2 +"P "+unitprice2+" "+quantity2+"P "+amount2);
 		}
 		
 			else if(quantity3>0){
-			System.out.println(pcode3+"			"+ Description3 +"	 P "+unitprice3+"			    "+quantity3+"			    P "+amount3);
+			System.out.println(pcode3+" "+ Description3 +"P "+unitprice3+" "+quantity3+"P "+amount3);
 		}
 		
 			else if(quantity4>0){
-			System.out.println(pcode4+"			"+ Description4 +"			 P "+ unitprice4 +"			    "+ quantity4 +"				P "+amount4);
+			System.out.println(pcode4+" "+ Description4 +"P "+ unitprice4 +""+ quantity4 +"P "+amount4);
 		}
 		
 			else if(quantity5>0){
-			System.out.println(pcode5+"			"+ Description5 +"    P "+ unitprice5 +"              "+ quantity5 +"			     P "+amount5);
+			System.out.println(pcode5+" "+ Description5 +"P "+ unitprice5 +" "+ quantity5 +"P "+amount5);
 		}
 
         System.out.println("\n****************nothing follows*****************");
 		amount = amount1 + amount2 + amount3 + amount4 + amount5;
-		System.out.println("\n					GRAND TOTAL: P "+ amount+"\n");
+		System.out.println("\n			GRAND TOTAL: P "+ amount+"\n");
 		System.out.println("**************************************************");
         
         while(i < 6){
@@ -217,12 +217,14 @@ public class EasyJavaCoffee
 			System.exit(0);
 			}
 		}
-	while(prompt.equalsIgnoreCase("Y"));
-
-            
+    }while(prompt.equalsIgnoreCase("Y"));
         
+
     }
-}
+    }
+
+
+
     
 
 		
