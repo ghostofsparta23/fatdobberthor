@@ -25,7 +25,7 @@ public class EasyJavaCoffee
         int i = 0;
         int quantity1 = 0, quantity2 = 0, quantity3 = 0, quantity4 = 0, quantity5 =0;
         //Initization first before the rest of the code has been encoded.
-
+        
         do{
             System.out.println("***************EASY JAVA COFFEE SHOP************************");
             System.out.println("                 Mandaluyong City");
@@ -46,21 +46,21 @@ public class EasyJavaCoffee
                 if(prompt.equalsIgnoreCase("Y")){
                     System.out.println(prompt+ "\n");
                     break;
+
+                }else if(prompt.equalsIgnoreCase("N")){
+                    System.out.println(prompt + "\nSystem Terminated");
+                    System.exit(0);
+                    break;
+
+                }else if(!prompt.equalsIgnoreCase("Y") && !prompt.equalsIgnoreCase("N")){
+                    JOptionPane.showMessageDialog(null, "Invalid Key, Please Try Again", "ERROR", JOptionPane.ERROR_MESSAGE);
                 }
-                else if(prompt.equalsIgnoreCase("N"))
-                {
-                        System.out.println(prompt + "\nSystem Terminated");
-                        System.exit(0);
-                        break;
-                }
-                else if(!prompt.equalsIgnoreCase("Y") && !prompt.equalsIgnoreCase("N")){
-                            JOptionPane.showMessageDialog(null, "Invalid Key, Please Try Again", "ERROR", JOptionPane.ERROR_MESSAGE);
-                }
+
                 i++;
                 if(i == 5){
-                JOptionPane.showMessageDialog(null, "Too many Invalid Attempts", "ERROR", JOptionPane.ERROR_MESSAGE);
-                System.out.println("\nSystem Terminated");
-                System.exit(0);
+                    JOptionPane.showMessageDialog(null, "Too many Invalid Attempts", "ERROR", JOptionPane.ERROR_MESSAGE);
+                    System.out.println("\nSystem Terminated");
+                    System.exit(0);
                 }
 
             }
@@ -76,8 +76,7 @@ public class EasyJavaCoffee
                     System.out.print("\nSelect Product Code:		");
                     System.out.println(pcode);
                     System.out.print("Enter Quantity:			");
-                    quantity1 = Integer.parseInt
-                    (JOptionPane.showInputDialog("Enter Quantity: "));
+                    quantity1 = Integer.parseInt(JOptionPane.showInputDialog("Enter Quantity: "));
                     System.out.println(quantity1);
                     amount1 = quantity1 * unitprice1;
                     System.out.println("Amount: " + amount1);
@@ -86,18 +85,16 @@ public class EasyJavaCoffee
                     System.out.print("\nSelect Product Code:		");
                     System.out.println(pcode);
                     System.out.print("Enter Quantity:			");
-                    quantity2 = Integer.parseInt
-                    (JOptionPane.showInputDialog("Enter Quantity: "));
+                    quantity2 = Integer.parseInt(JOptionPane.showInputDialog("Enter Quantity: "));
                     System.out.println(quantity2);
                     amount2 = quantity2 * unitprice2;
                     System.out.println("Amount: " + amount2);
 
-                }else if (pcode.equals(pcode3)){
+                }else if(pcode.equals(pcode3)){
                     System.out.print("\nSelect Product Code:		");
                     System.out.println(pcode);
                     System.out.print("Enter Quantity:			");
-                    quantity3 = Integer.parseInt
-                    (JOptionPane.showInputDialog("Enter Quantity: "));
+                    quantity3 = Integer.parseInt(JOptionPane.showInputDialog("Enter Quantity: "));
                     System.out.println(quantity3);
                     amount3 = quantity3 * unitprice3;
                     System.out.println("Amount: " + amount3);
@@ -106,8 +103,7 @@ public class EasyJavaCoffee
                     System.out.print("\nSelect Product Code:		");
                     System.out.println(pcode);
                     System.out.print("Enter Quantity:			");
-                    quantity4 = Integer.parseInt
-                    (JOptionPane.showInputDialog("Enter Quantity: "));
+                    quantity4 = Integer.parseInt(JOptionPane.showInputDialog("Enter Quantity: "));
                     System.out.println(quantity4);
                     amount4 = quantity4 * unitprice4;
                     System.out.println("Amount: " + amount4);
@@ -116,8 +112,7 @@ public class EasyJavaCoffee
                     System.out.print("\nSelect Product Code:		");
                     System.out.println(pcode);
                     System.out.print("Enter Quantity:			");
-                    quantity5 = Integer.parseInt
-                    (JOptionPane.showInputDialog("Enter Quantity: "));
+                    quantity5 = Integer.parseInt(JOptionPane.showInputDialog("Enter Quantity: "));
                     System.out.println(quantity5);
                     amount5 = quantity5 * unitprice5;
                     System.out.println("Amount: " + amount5);
@@ -156,7 +151,7 @@ public class EasyJavaCoffee
             System.out.println("                 Mandaluyong City");
             System.out.println("                    ORDER INFORMATION \n");
 
-            System.out.println("Code  " + " Description  " + " Unit Price  " + " Quantity  " + "A mount  ");
+            System.out.println("Code  " + " Description  " + " Unit Price  " + " Quantity  " + "Amount  ");
             if(quantity1>0){
                 System.out.println(pcode1+"  "+ Description1 +"P "+unitprice1+" "+quantity1+"P "+amount1);
 
